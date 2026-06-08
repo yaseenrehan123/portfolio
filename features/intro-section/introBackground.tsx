@@ -10,7 +10,8 @@ const IntroBackground = () => {
             <div className='absolute w-150 h-150 bg-[#3b82f6]/30 rounded-full mix-blend-screen blur-[150px]
             right-[-50] bottom-[-80] filter pointer-events-none'>
 
-            </div></div>
+            </div>
+        </div>
     )
 }
 
