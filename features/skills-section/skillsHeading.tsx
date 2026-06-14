@@ -10,7 +10,7 @@ const SkillsHeading = () => {
                     Expertise & Skills
                 </div>
             </div>
-            <div className='text-gray-500 text-center text-2xl'>
+            <div className='text-gray-500 text-center text-[1.2rem]'>
                 A comprehensive toolkit for building modern, full-stack applications from the ground up.
             </div>
         </div>

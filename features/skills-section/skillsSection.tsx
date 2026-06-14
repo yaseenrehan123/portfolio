@@ -1,17 +1,16 @@
 import React from 'react'
 import SkillsHeading from './skillsHeading'
-
+import { FiLayout } from "react-icons/fi";
+import RowDivider from '@/components/ui/general/columnDivider';
+import SkillCard from '@/features/general/components/skill-cards/skillCard';
+import SkillListElement from '../general/components/skill-cards/skillListElement';
+import SkillsContainer from './skillsContainer';
 
 const SkillsSection = () => {
     return (
-        <div className='flex items-center flex-col w-full'>
+        <div className='flex items-center flex-col w-full gap-20'>
             <SkillsHeading />
-            <div className='flex flex-col bg-neutral-900 outline-1 outline-gray-500 w-80 min-h-10 rounded-[8px]
-            py-2 px-4'>
-                <div className='text-white text-2xl font-bold'>
-                    Frontend
-                </div>
-            </div>
+            <SkillsContainer />
         </div>
     )
 }
