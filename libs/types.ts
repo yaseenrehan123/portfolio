@@ -11,6 +11,7 @@ export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
 }
 export type MediaLinkButtonProps = React.HTMLAttributes<HTMLDivElement> & Partial<LinkProps> & {}
 export type RowDividerProps = React.HTMLAttributes<HTMLDivElement> & RowDividerVariants;
+//NORMAL COMPONENTS
 export type SkillCardProps = {
     title: string,
     icon: React.ReactNode,
@@ -18,4 +19,11 @@ export type SkillCardProps = {
 }
 export type SkillListElementProps = {
     title: string
+}
+export type ProjectCardProps = {
+    title: string,
+    description: string,
+    techTags: string[],
+    githubSrc: string,
+    demoSrc: string
 }

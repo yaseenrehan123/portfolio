@@ -14,8 +14,8 @@ const IntroDetails = () => {
                     Fullstack Developer
                 </div>
             </div>
-            <div className='flex items-start flex-col gap-2 text-gray-500 text-[clamp(1rem,2vw,1.2rem)] w-full border-green-500
-                    border-2 max-w-[80%] sm:max-w-[70%] md:max-w-[50%]'>
+            <div className='flex items-start flex-col gap-2 text-gray-500 text-[clamp(1rem,2vw,1.2rem)] w-full
+                max-w-[80%] sm:max-w-[70%] md:max-w-[50%]'>
                 I build scaleable, performant applications with modern stack including React, Next.js, Node.js and Postgres.
                 I turn complex problems into elegant, user centric solutions.
             </div>

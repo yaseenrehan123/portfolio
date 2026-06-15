@@ -9,7 +9,7 @@ const IntroSection = () => {
         <div className='flex items-center flex-col w-full lg:w-[90%] xl:w-[80%]   
         h-screen bg-black relative overflow-hidden z-0'>
             <IntroBackground />
-            <div className='flex items-center justify-start gap-4 flex-col border-2 border-red-500
+            <div className='flex items-center justify-start gap-4 flex-col 
             pt-36 z-10 '>
                 <IntroBadge />
                 <IntroDetails />
