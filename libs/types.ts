@@ -11,6 +11,13 @@ export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
 }
 export type MediaLinkButtonProps = React.HTMLAttributes<HTMLDivElement> & Partial<LinkProps> & {}
 export type RowDividerProps = React.HTMLAttributes<HTMLDivElement> & RowDividerVariants;
+export type FormContainerProps = React.HTMLAttributes<HTMLDivElement> & {
+    variant?: 'light' | 'dark'
+};
+export type FormFieldProps = React.InputHTMLAttributes<HTMLInputElement> & {
+    variant?: 'default' | 'small' | 'large',
+    bg?: "light" | "dark"
+}
 //NORMAL COMPONENTS
 export type SkillCardProps = {
     title: string,

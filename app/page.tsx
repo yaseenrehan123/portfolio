@@ -1,3 +1,4 @@
+import ContactSection from "@/features/contact-section/contactSection";
 import IntroSection from "@/features/intro-section/introSection";
 import ProjectsSection from "@/features/projects-section/projectsSection";
 import SkillsSection from "@/features/skills-section/skillsSection";
@@ -9,6 +10,7 @@ export default function Home() {
       <IntroSection />
       <SkillsSection />
       <ProjectsSection />
+      <ContactSection />
     </div>
   );
 }
