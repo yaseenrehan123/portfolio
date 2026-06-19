@@ -4,8 +4,9 @@ import Button from '@/components/ui/general/button'
 import { SlSocialGithub } from "react-icons/sl";
 import { GrShare } from "react-icons/gr";
 import { ProjectCardProps } from '@/libs/types';
+import Link from 'next/link';
 
-const ProjectCard = ({ title, description, techTags, githubSrc, demoSrc }: ProjectCardProps) => {
+const ProjectCard = ({ id, title, description, techTags, githubSrc }: ProjectCardProps) => {
     return (
         <div className='bg-[rgba(20,20,20,0.6)] flex flex-col gap-4 w-90 min-h-10 outline-2 outline-neutral-900
             rounded-[8px] py-8 px-4 text-white grow'>
@@ -31,13 +32,13 @@ const ProjectCard = ({ title, description, techTags, githubSrc, demoSrc }: Proje
 
                 </a>
 
-                <a href={demoSrc} target="_blank"
+                <Link href={`/projects/demo/${id}`}
                     className='rounded-3xl flex items-center justify-center gap-2 font-inter w-34 
                     h-12 font-semibold bg-white text-black'>
                     <GrShare />
-                    <div>Live Demo</div>
+                    <div>View Demo</div>
 
-                </a>
+                </Link>
 
             </div>
         </div>

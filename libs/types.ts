@@ -28,9 +28,20 @@ export type SkillListElementProps = {
     title: string
 }
 export type ProjectCardProps = {
+    id: string,
     title: string,
     description: string,
     techTags: string[],
     githubSrc: string,
-    demoSrc: string
+}
+//GENERAL
+export type ProjectDetails = {
+    id: string,
+    title: string,
+    description: string,
+    techTags: string[],
+    githubSrc: string,
+    videoUrl: string,
+    screenshotUrls: string[]
+
 }
