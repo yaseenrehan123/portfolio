@@ -1,16 +1,24 @@
 "use client";
 import Image from 'next/image'
 import { useParams, useSearchParams } from 'next/navigation'
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { projectsData } from '@/libs/projectData';
+import ImageZoom from '@/features/general/components/image-zoom/imageZoom';
 const DemoPage = () => {
     const params = useParams();
     const id: string = (params.id as string) || "";
     const selectedProjectData = projectsData.find((data) => id == data.id);
     if (!selectedProjectData) { throw new Error(`Error Occured in Retrieving Project Data: ${id}`) }
+    const [zoomedImageUrl, setZoomedImageUrl] = useState<string>("")
+    const [zoomScreenEnabled, setZoomScreenEnabled] = useState<boolean>(false);
     useEffect(() => {
         console.log(id);
     }, [id])
+
+    const onScreenshotClicked = (url: string) => {
+        setZoomScreenEnabled(true)
+        setZoomedImageUrl(url)
+    }
 
     return (
         <div className='bg-black w-screen h-screen overflow-x-hidden'>
@@ -23,10 +31,12 @@ const DemoPage = () => {
                     {selectedProjectData?.screenshotUrls.map((url, index) => (
                         <Image src={url} width={300} height={100} alt='Project Screenshot' key={index}
                             className='hover:cursor-pointer hover:scale-98 hover:opacity-70 transition-all duration-150
-                            active:scale-95' />
+                            active:scale-95'
+                            onClick={() => onScreenshotClicked(url)} />
                     ))}
 
                 </div>
+                <ImageZoom imgSrc={zoomedImageUrl} enabled={zoomScreenEnabled} />
             </div>
 
         </div>

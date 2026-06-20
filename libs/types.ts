@@ -34,6 +34,10 @@ export type ProjectCardProps = {
     techTags: string[],
     githubSrc: string,
 }
+export type ImageZoomProps = {
+    imgSrc: string,
+    enabled: boolean
+}
 //GENERAL
 export type ProjectDetails = {
     id: string,
