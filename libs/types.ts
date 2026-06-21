@@ -37,6 +37,11 @@ export type ProjectCardProps = {
 export type ImageZoomProps = {
     imgSrc: string,
     enabled: boolean
+    onClose: () => void,
+    onPrev: () => void,
+    onNext: () => void,
+    hasPrev: boolean,
+    hasNext: boolean
 }
 //GENERAL
 export type ProjectDetails = {

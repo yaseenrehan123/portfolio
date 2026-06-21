@@ -9,16 +9,43 @@ const DemoPage = () => {
     const id: string = (params.id as string) || "";
     const selectedProjectData = projectsData.find((data) => id == data.id);
     if (!selectedProjectData) { throw new Error(`Error Occured in Retrieving Project Data: ${id}`) }
-    const [zoomedImageUrl, setZoomedImageUrl] = useState<string>("")
+    //const [zoomedImageUrl, setZoomedImageUrl] = useState<string>("")
     const [zoomScreenEnabled, setZoomScreenEnabled] = useState<boolean>(false);
-    useEffect(() => {
-        console.log(id);
-    }, [id])
+    const [activeImageIndex, setActiveImageIndex] = useState<number | null>(null);
+    const [hasPrev, setHasPrev] = useState<boolean>(false)
+    const [hasNext, setHasNext] = useState<boolean>(false);
 
-    const onScreenshotClicked = (url: string) => {
+    const urls: string[] = selectedProjectData.screenshotUrls;
+    /*useEffect(() => {
+        console.log(id);
+    }, [id])*/
+
+    useEffect(() => {
+        setHasPrev(activeImageIndex !== null && activeImageIndex > 0);
+        setHasNext(activeImageIndex !== null && activeImageIndex < urls.length - 1)
+    }, [activeImageIndex])
+
+    const onScreenshotClicked = (url: string, index: number) => {
         setZoomScreenEnabled(true)
-        setZoomedImageUrl(url)
+        //setZoomedImageUrl(url)
+        setActiveImageIndex(index)
     }
+    const onZoomScreenClosed = () => {
+        setZoomScreenEnabled(false)
+    }
+    const onZoomScreenPrevClicked = () => {
+        if (activeImageIndex == null) return
+        setActiveImageIndex((prev) => (prev as number) - 1)
+        //setZoomedImageUrl(urls[activeImageIndex + 1])
+
+    }
+    const onZoomScreenNextClicked = () => {
+        if (activeImageIndex == null) return
+        setActiveImageIndex((prev) => (prev as number) + 1)
+        //setZoomedImageUrl(urls[activeImageIndex + 1])
+    }
+
+    const zoomedImageUrl = activeImageIndex !== null ? urls[activeImageIndex] : "";
 
     return (
         <div className='bg-black w-screen h-screen overflow-x-hidden'>
@@ -32,11 +59,18 @@ const DemoPage = () => {
                         <Image src={url} width={300} height={100} alt='Project Screenshot' key={index}
                             className='hover:cursor-pointer hover:scale-98 hover:opacity-70 transition-all duration-150
                             active:scale-95'
-                            onClick={() => onScreenshotClicked(url)} />
+                            onClick={() => onScreenshotClicked(url, index)} />
                     ))}
 
                 </div>
-                <ImageZoom imgSrc={zoomedImageUrl} enabled={zoomScreenEnabled} />
+                <ImageZoom
+                    imgSrc={zoomedImageUrl}
+                    enabled={zoomScreenEnabled}
+                    onClose={onZoomScreenClosed}
+                    hasPrev={hasPrev}
+                    hasNext={hasNext}
+                    onPrev={onZoomScreenPrevClicked}
+                    onNext={onZoomScreenNextClicked} />
             </div>
 
         </div>
