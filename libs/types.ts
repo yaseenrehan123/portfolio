@@ -43,6 +43,10 @@ export type ImageZoomProps = {
     hasPrev: boolean,
     hasNext: boolean
 }
+export type DemoScreenshotsGridProps = {
+    projectData: ProjectDetails,
+    onScreenshotClicked: (index: number) => void
+}
 //GENERAL
 export type ProjectDetails = {
     id: string,
