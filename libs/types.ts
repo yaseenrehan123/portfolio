@@ -58,3 +58,16 @@ export type ProjectDetails = {
     screenshotUrls: string[]
 
 }
+//CONTEXT
+export type DemoGalleryContextFields = {
+    zoomScreenEnabled: boolean,
+    activeImgIndex: number | null,
+    hasPrevImg: boolean,
+    hasNextImg: boolean,
+    zoomedImageUrl: string,
+    urls: string[],
+    onZoom: (index: number) => void,
+    onZoomClosed: () => void,
+    onPrevClicked: () => void,
+    onNextClicked: () => void,
+}
