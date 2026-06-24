@@ -5,9 +5,9 @@ import React from 'react'
 
 const FormContainer = ({ variant, className, children, ...props }: FormContainerProps) => {
     return (
-        <div className={cn(variants({ variant }), className)} {...props}>
+        <form className={cn(variants({ variant }), className)} {...props}>
             {children}
-        </div>
+        </form>
     )
 }
 

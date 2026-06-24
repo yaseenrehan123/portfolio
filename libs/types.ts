@@ -9,14 +9,18 @@ export type RowDividerVariants = {
 export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
     variant?: 'default' | 'outline'
 }
-export type MediaLinkButtonProps = React.HTMLAttributes<HTMLDivElement> & Partial<LinkProps> & {}
+export type MediaLinkButtonProps = React.AnchorHTMLAttributes<HTMLAnchorElement>
 export type RowDividerProps = React.HTMLAttributes<HTMLDivElement> & RowDividerVariants;
-export type FormContainerProps = React.HTMLAttributes<HTMLDivElement> & {
+export type FormContainerProps = React.HTMLAttributes<HTMLFormElement> & {
     variant?: 'light' | 'dark'
 };
 export type FormFieldProps = React.InputHTMLAttributes<HTMLInputElement> & {
     variant?: 'default' | 'small' | 'large',
     bg?: "light" | "dark"
+}
+export type MessageAreaProps = React.TextareaHTMLAttributes<HTMLTextAreaElement> & {
+    variant?: "default" | "sm" | "md" | "lg",
+    theme?: "light" | "dark"
 }
 //NORMAL COMPONENTS
 export type SkillCardProps = {
