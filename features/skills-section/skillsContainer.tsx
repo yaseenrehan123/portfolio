@@ -11,11 +11,11 @@ const SkillsContainer = () => {
                     title='Frontend'
                     icon={<FiLayout />}
                     skills={[
-                        "React",
                         "Next.js",
+                        "React",
                         "Vite",
-                        "HTML/CSS",
                         "Tailwind",
+                        "HTML/CSS",
                         "Zustand"
                     ]} />
                 {/*BACKEND*/}
@@ -26,8 +26,6 @@ const SkillsContainer = () => {
                         "Node.js",
                         "Express.js",
                         "REST APIs",
-                        "HTML/CSS",
-                        "GraphQL",
                         "Authentication"
                     ]} />
                 {/*DATABASE*/}
@@ -37,8 +35,7 @@ const SkillsContainer = () => {
                     skills={[
                         "PostgreSQL",
                         "Prisma ORM",
-                        "MongoDB",
-                        "Redis",
+                        "Supabase"
                     ]} />
                 {/*TOOLS*/}
                 <SkillCard
@@ -46,10 +43,11 @@ const SkillsContainer = () => {
                     icon={<FiLayout />}
                     skills={[
                         "Git",
-                        "Docker",
-                        "AWS",
+                        "Github",
                         "Vercel",
-                        "CI/CD",
+                        "React Native",
+                        "Expo"
+
                     ]} />
             </div>
         </div>

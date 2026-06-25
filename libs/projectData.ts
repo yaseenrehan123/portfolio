@@ -44,7 +44,7 @@ export const projectsData: ProjectDetails[] = [
         description: "A custom game engine written in TypeScript, which allows you to draw sprites on a canvas and make 2D games.",
         techTags: ["Node.js", "TypeScript", "Game", "HTML5 Canvas"],
         githubSrc: "https://github.com/yaseenrehan123/Piton-Engine",
-        videoUrl: "https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE",
+        videoUrl: "https://www.youtube.com/embed/t78hQ2R2-C0?si=xs9j6P7Ky0RcQ9jw",
         screenshotUrls: [
             "/images/pitonengine/1.png",
             "/images/pitonengine/2.png",
