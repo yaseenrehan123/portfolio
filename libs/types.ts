@@ -1,4 +1,5 @@
-import { LinkProps } from "next/link"
+import contactFormSchema from "@/schemas/contactFormSchema";
+import z from "zod";
 
 //SHADCN COMPONENT VARIANTS
 export type RowDividerVariants = {
@@ -22,6 +23,15 @@ export type MessageAreaProps = React.TextareaHTMLAttributes<HTMLTextAreaElement>
     variant?: "default" | "sm" | "md" | "lg",
     theme?: "light" | "dark"
 }
+export type MessageProps = React.HTMLAttributes<HTMLDivElement> & {
+    variant?: 'default' | 'success' | 'loading' | 'error',
+    disableOnContent?: 'never' | 'sm' | 'md' | 'lg',
+    content?: String
+}
+export type AlignmentProps = React.HTMLAttributes<HTMLDivElement> & {
+    variant?: 'rowLeft' | 'rowCenter' | 'rowRight' | 'colLeft' | 'colCenter' | 'colRight',
+    gap?: 'sm' | 'md' | 'lg'
+};
 //NORMAL COMPONENTS
 export type SkillCardProps = {
     title: string,
@@ -74,4 +84,10 @@ export type DemoGalleryContextFields = {
     onZoomClosed: () => void,
     onPrevClicked: () => void,
     onNextClicked: () => void,
+}
+//FORM FIELDS
+export type ContactFormFields = z.infer<typeof contactFormSchema>;
+//TANSTACK QUERY FIELDS
+export type ContactQueryFields = ContactFormFields & {
+    access_key: string
 }
