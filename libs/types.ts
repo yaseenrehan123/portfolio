@@ -1,4 +1,5 @@
 import contactFormSchema from "@/schemas/contactFormSchema";
+import { HTMLMotionProps } from "framer-motion";
 import z from "zod";
 
 //SHADCN COMPONENT VARIANTS
@@ -61,6 +62,7 @@ export type DemoScreenshotsGridProps = {
     projectData: ProjectDetails,
     onScreenshotClicked: (index: number) => void
 }
+export type FadeInScreenProps = HTMLMotionProps<"div">;
 //GENERAL
 export type ProjectDetails = {
     id: string,

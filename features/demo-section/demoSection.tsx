@@ -5,6 +5,7 @@ import DemoVideoEmbed from './demoVideoEmbed';
 import DemoScreenshotsGrid from './demoScreenshotsGrid';
 import { DemoGalleryContextProvider } from '@/contexts/demoGalleryContext';
 import DemoZoomContainer from './demoZoomContainer';
+import FadeInScreen from '../general/components/animation/fadeInScreen';
 const DemoSection = () => {
     const params = useParams();
     const id: string = (params.id as string) || "";
@@ -14,7 +15,7 @@ const DemoSection = () => {
     const urls: string[] = selectedProjectData.screenshotUrls;
 
     return (
-        <div className='bg-black w-screen h-screen overflow-x-hidden'>
+        <FadeInScreen className='bg-black w-screen h-screen overflow-x-hidden'>
             <div className='flex items-center flex-col gap-6 w-full h-full pt-10 px-2'>
                 <DemoVideoEmbed videoUrl={selectedProjectData.videoUrl} />
                 <DemoGalleryContextProvider urls={urls}>
@@ -23,7 +24,7 @@ const DemoSection = () => {
                 </DemoGalleryContextProvider>
             </div>
 
-        </div>
+        </FadeInScreen>
     )
 }
 
